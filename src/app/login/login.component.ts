@@ -14,9 +14,9 @@ export class LoginComponent {
 
   login() {
     const user = {username: this.username, password: this.password};
-    debugger;
     this.userService.login(user).subscribe( data => {
-      console.log(data);
+      sessionStorage.setItem('token',data.headers.get("Authorization"));
+      //console.log(data.headers.get("Authorization"));
     });
   }
 }
