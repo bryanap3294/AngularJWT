@@ -16,4 +16,12 @@ export class UsersService {
     }))
     ;
   }
+
+  setToken(token:string){
+    sessionStorage.setItem('token', token);
+  }
+
+  getToken(){
+    return sessionStorage.getItem('token');
+  }
 }
